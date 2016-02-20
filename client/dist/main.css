@@ -122,16 +122,21 @@ select {
   color: #FFFFFF;
   float: left;
   height: 100vh;
-  width: 150px;
-  font-family: 'Montserrat', sans-serif; }
+  width: 200px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px; }
   .sidebar > ul, .sidebar ol {
-    list-style: none; }
+    list-style: none;
+    margin-left: -10px; }
     .sidebar > ul > li, .sidebar ol > li {
-      cursor: pointer; }
+      cursor: pointer;
+      padding: 5px; }
       .sidebar > ul > li:hover, .sidebar > ul > li:focus, .sidebar ol > li:hover, .sidebar ol > li:focus {
         opacity: 0.75; }
       .sidebar > ul > li:active, .sidebar ol > li:active {
         opacity: 0.90; }
+    .sidebar > ul > span, .sidebar ol > span {
+      padding: 20px; }
 
 * {
   -webkit-font-smoothing: antialiased; }

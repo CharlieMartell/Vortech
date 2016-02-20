@@ -3,16 +3,17 @@
   color: #FFFFFF;
   float: left;
   height: 100vh;
-  width: 150px;
+  width: 200px;
   font-family: 'Montserrat', sans-serif;
-
-
+  padding: 10px;
+  
   > ul, ol {
     list-style: none;
-    // font-family: inherit;
+    margin-left: -10px;
 
     > li {
       cursor: pointer;
+      padding: 5px;
 
       &:hover,
       &:focus {
@@ -23,8 +24,9 @@
         opacity: 0.90;
       }
     }
+
+    > span {
+      padding: 20px;
+    }
   }
-  // font-weight: bold;
-  // float: left;
-  // color: #ffffff;
 }
