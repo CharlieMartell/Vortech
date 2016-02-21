@@ -35,11 +35,6 @@ class Inbox extends Component {
         const dispatch = this.props.dispatch;
 
         return (
-<<<<<<< HEAD
-                <div className="inbox">
-                    <h1>All Inbox</h1>
-                    <EmailList emails={emails} onEmailClick={(id) => dispatch(selectEmail(id))} />
-=======
                 <div>
                     <div className="email-list">
                         <input type="text" placeholder="Search" />
@@ -47,7 +42,6 @@ class Inbox extends Component {
                             emails={emails}
                             onEmailClick={(id) => dispatch(selectEmail(id))} />
                     </div>
->>>>>>> c73f902f62f96581ca027321f199df00e0ec8f75
                     <ContentView />
                 </div>
                );
