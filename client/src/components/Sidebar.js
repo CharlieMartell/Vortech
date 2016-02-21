@@ -35,13 +35,13 @@ class Sidebar extends Component {
                           Inbox
                         </li>
                         <li className="subitem">
-                          Sent Mail
+                          <i className="fa fa-paper-plane"></i> &nbsp; Sent Mail
                         </li>
                         <li className="subitem">
-                          Archive
+                          <i className="fa fa-check"></i> &nbsp; Archive
                         </li>
                         <li className="subitem">
-                          Trash
+                          <i className="fa fa-trash-o"></i> &nbsp; Trash
                         </li>
                         <li className="subitem">
                           Spam
