@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import EmailBody from '../components/EmailBody';
+import EmailHeader from '../components/EmailHeader';
+import Dashboard from '../components/Dashboard';
 import { connect } from 'react-redux';
 
 class ContentView extends Component {
@@ -25,8 +27,9 @@ class ContentView extends Component {
         console.log(selectedEmail);
 
         return (
-                <div>
-                    { (selectedEmail !== -1) ? <EmailBody /> : <p>Hi</p> }
+                <div className="content-view">
+                    <EmailHeader />
+                    { (selectedEmail !== -1) ? <EmailBody /> : <Dashboard /> }
                 </div>
                );
     }

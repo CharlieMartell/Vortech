@@ -17,6 +17,14 @@ export const selectEmail = (id) => {
     }
 }
 
+export const selectEmailFilter = (name) => {
+    return function(dispatch) {
+        return fetch("http://localhost:5000/api/v1/recipes/?recipe=" + name)
+            .then((res) => res.json())
+            .then(json => dispatch(requestEmailSuccess(json.emails))); 
+    }
+}
+
 export const requestEmailSuccess = (emails) => {
     return {
         type: REQUEST_EMAILS_SUCCESS,
@@ -32,13 +40,8 @@ export const fetchEmails = () => {
         dispatch(requestEmails());
 
         return fetch('http://localhost:5000/api/v1/mail/')
-            .then((res) => {
-                const data = JSON.parse(res.text);
-                dispatch(requestEmailSuccess(data.emails));
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+            .then((res) => res.json())
+            .then(json => dispatch(requestEmailSuccess(json.emails)))
     }
 }
 

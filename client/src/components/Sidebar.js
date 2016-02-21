@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { pushState } from 'redux-router';
 import { connect } from 'react-redux';
+import FilterOptions from './FilterOptions';
 
 class Sidebar extends Component {
 
@@ -26,15 +27,30 @@ class Sidebar extends Component {
     render() {
         return (
                 <div className="sidebar">
-                    <span>Mailbox</span>
-
+                    <div className="title">
+                        <h2>Vor.tech</h2>
+                    </div>
                     <ul>
                         <li onClick={this.navInbox}>
-                          <i className="fa fa-inbox"></i> &nbsp; Inbox
+                          Inbox
                         </li>
+                        <li className="subitem">
+                          Sent Mail
+                        </li>
+                        <li className="subitem">
+                          Archive
+                        </li>
+                        <li className="subitem">
+                          Trash
+                        </li>
+                        <li className="subitem">
+                          Spam
+                        </li>
+
                         <li onClick={this.navFilters}>
-                          <i className="fa fa-filter"></i> &nbsp; Filters
+                          Filters
                         </li>
+                        <FilterOptions />
                     </ul>
                 </div>
                 )

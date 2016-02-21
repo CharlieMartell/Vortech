@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import EmailList from '../components/EmailList';
 import ContentView from './ContentView';
 import { selectEmail, fetchEmails } from '../actions/email';
+import { fetchFilters } from '../actions/filter';
 import { connect } from 'react-redux';
 
 class Inbox extends Component {
@@ -15,11 +16,15 @@ class Inbox extends Component {
             dispatch,
             emails
         } = this.props;
-        this.props.dispatch(fetchEmails());
+        dispatch(fetchEmails());
+        dispatch(fetchFilters());
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.emails.length !== this.props.emails.length) {
+        if(!nextProps)
+            return;
+
+        if(!this.props.emails || nextProps.emails.length !== this.props.emails.length) {
             const { dispatch, emails } = nextProps;
         }
     }
@@ -30,9 +35,19 @@ class Inbox extends Component {
         const dispatch = this.props.dispatch;
 
         return (
+<<<<<<< HEAD
                 <div className="inbox">
                     <h1>All Inbox</h1>
                     <EmailList emails={emails} onEmailClick={(id) => dispatch(selectEmail(id))} />
+=======
+                <div>
+                    <div className="email-list">
+                        <input type="text" placeholder="Search" />
+                        <EmailList
+                            emails={emails}
+                            onEmailClick={(id) => dispatch(selectEmail(id))} />
+                    </div>
+>>>>>>> c73f902f62f96581ca027321f199df00e0ec8f75
                     <ContentView />
                 </div>
                );
