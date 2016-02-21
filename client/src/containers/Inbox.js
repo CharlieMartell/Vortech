@@ -23,8 +23,8 @@ class Inbox extends Component {
         const dispatch = this.props.dispatch;
 
         return (
-                <div>
-                    <h1>Inbox</h1>
+                <div className="inbox">
+                    <h1>All Inbox</h1>
                     <EmailList emails={emails} onEmailClick={(id) => dispatch(selectEmail(id))} />
                     <ContentView />
                 </div>

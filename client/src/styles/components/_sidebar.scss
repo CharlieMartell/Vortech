@@ -4,9 +4,9 @@
   float: left;
   height: 100vh;
   width: 200px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $default-font;
   padding: 10px;
-  
+
   > ul, ol {
     list-style: none;
     margin-left: -10px;
